@@ -1,0 +1,35 @@
+name: Focus App Build
+on:
+  push:
+    branches: [ "main", "master" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Setup Gradle Cache
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: wrapper
+      - name: Make Gradlew Executable
+        run: chmod +x gradlew
+      - name: Restore Fixed Debug Keystore
+        run: |
+          mkdir -p ~/.android
+          echo "${{ secrets.DEBUG_KEYSTORE_BASE64 }}" | base64 --decode > ~/.android/debug.keystore
+      - name: Build APK with Gradle (Super Fast Mode)
+        run: ./gradlew assembleDebug --build-cache --parallel --configuration-cache --no-daemon -Porg.gradle.caching=true -Porg.gradle.configureondemand=true
+      - name: Upload Finished APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: FocusApp-Debug-APK
+          path: app/build/outputs/apk/debug/*.apk
+          compression-level: 1
