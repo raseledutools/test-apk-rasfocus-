@@ -230,171 +230,171 @@ class RasFocusBlockingService : AccessibilityService() {
     // ── Motivational Quotes — feature অনুযায়ী আলাদা list ──
     // প্রতিটা entry: Pair(quote, author)
     private val QUOTES_DEFAULT = listOf(
-        Pair("তোমার সময় সীমিত, তা অন্যের জীবন যাপনে নষ্ট করো না।", "স্টিভ জবস"),
-        Pair("শৃঙ্খলাই স্বাধীনতার সেতু।", "জিম রোহন"),
-        Pair("যে নিজেকে নিয়ন্ত্রণ করতে পারে, সে সবকিছু জয় করতে পারে।", "এপিকটেটাস"),
-        Pair("মনোযোগ হলো নতুন যুগের মুদ্রা — তা সাবধানে ব্যয় করো।", "ক্যাল নিউপোর্ট"),
-        Pair("ছোট ছোট অভ্যাসই বড় পরিবর্তন আনে।", "জেমস ক্লিয়ার"),
-        Pair("প্রতিটি মুহূর্ত যা তুমি সোশ্যাল মিডিয়ায় কাটাও, সেটা তোমার স্বপ্নের কাছ থেকে দূরে সরে যাওয়া।", "RasFocus+"),
-        Pair("নিজের উপর নিয়ন্ত্রণই সবচেয়ে বড় শক্তি।", "লাও জু"),
-        Pair("একটা বিক্ষিপ্ত মন কখনো মহৎ কাজ করতে পারে না।", "রবীন্দ্রনাথ ঠাকুর")
+        Pair("Your time is limited, do not waste it living someone else's life.", "Steve Jobs"),
+        Pair("Discipline is the bridge between goals and accomplishment.", "Jim Rohn"),
+        Pair("He who controls others may be powerful, but he who masters himself is mightier still.", "Epictetus"),
+        Pair("Attention is the rarest and purest form of generosity — spend it wisely.", "Cal Newport"),
+        Pair("Small habits make big changes.", "James Clear"),
+        Pair("Every moment you spend on social media is a step away from your dreams.", "RasFocus+"),
+        Pair("Mastering yourself is the greatest power.", "Lao Tzu"),
+        Pair("A distracted mind can never achieve great things.", "Rabindranath Tagore")
     )
 
     private val QUOTES_BY_FEATURE: Map<String, List<Pair<String, String>>> = mapOf(
 
         "YouTube Shorts" to listOf(
-            Pair("Shorts দেখে সময় নষ্ট করা মানে নিজের ভবিষ্যৎকে ছোট করা।", "RasFocus+"),
-            Pair("তুমি কী consume করছ, সেটাই তোমাকে define করে।", "ক্যাল নিউপোর্ট"),
-            Pair("একটানা short video দেখা মস্তিষ্কের মনোযোগ ধ্বংস করে।", "Andrew Huberman"),
-            Pair("বড় স্বপ্ন দেখতে হলে ছোট distraction ছাড়তে হবে।", "জিম রোহন"),
-            Pair("Screen time কমাও, dream time বাড়াও।", "RasFocus+"),
-            Pair("যে ব্যক্তি নিজের সময়কে সম্মান করে, সে জীবনে এগিয়ে যায়।", "বেনজামিন ফ্র্যাংকলিন")
+            Pair("Wasting time on Shorts means shrinking your own future.", "RasFocus+"),
+            Pair("What you consume defines who you become.", "Cal Newport"),
+            Pair("Continuous short-video watching destroys your brain's ability to focus.", "Andrew Huberman"),
+            Pair("To dream big, you must give up small distractions.", "Jim Rohn"),
+            Pair("Reduce screen time, increase dream time.", "RasFocus+"),
+            Pair("The person who respects their time moves forward in life.", "Benjamin Franklin")
         ),
 
         "Instagram Reels" to listOf(
-            Pair("Reels দেখছ? তোমার real life reel হয়ে যাচ্ছে।", "RasFocus+"),
-            Pair("সোশ্যাল মিডিয়া তোমার মনোযোগ চুরি করার একটি মেশিন।", "Tristan Harris"),
-            Pair("অন্যের highlight reel দেখে নিজের জীবন ম্লান করো না।", "RasFocus+"),
-            Pair("প্রতিটি scroll তোমার একটা মূল্যবান মুহূর্ত নিয়ে যাচ্ছে।", "ক্যাল নিউপোর্ট"),
-            Pair("যে নিজেকে নিয়ন্ত্রণ করতে পারে, সে সবকিছু জয় করতে পারে।", "এপিকটেটাস"),
-            Pair("তোমার মনোযোগই তোমার সবচেয়ে মূল্যবান সম্পদ।", "Robin Sharma")
+            Pair("Watching Reels? Your real life is becoming a reel.", "RasFocus+"),
+            Pair("Social media is a machine designed to steal your attention.", "Tristan Harris"),
+            Pair("Do not dim your own life by watching others' highlight reel.", "RasFocus+"),
+            Pair("Every scroll takes away one precious moment of your life.", "Cal Newport"),
+            Pair("He who controls others may be powerful, but he who masters himself is mightier still.", "Epictetus"),
+            Pair("Your attention is your most valuable asset.", "Robin Sharma")
         ),
 
         "Facebook Reels" to listOf(
-            Pair("Reels দেখছ? তোমার real life reel হয়ে যাচ্ছে।", "RasFocus+"),
-            Pair("Facebook তোমার সময় চায়, তুমি কি দিতে রাজি?", "RasFocus+"),
-            Pair("প্রতিটি scroll তোমার একটা মূল্যবান মুহূর্ত নিয়ে যাচ্ছে।", "ক্যাল নিউপোর্ট"),
-            Pair("মনোযোগ ছাড়া কোনো সাফল্য নেই।", "Robin Sharma"),
-            Pair("অভ্যাসই মানুষকে তৈরি করে।", "অ্যারিস্টটল")
+            Pair("Watching Reels? Your real life is becoming a reel.", "RasFocus+"),
+            Pair("Facebook wants your time — are you willing to give it?", "RasFocus+"),
+            Pair("Every scroll takes away one precious moment of your life.", "Cal Newport"),
+            Pair("There is no success without focus.", "Robin Sharma"),
+            Pair("We are what we repeatedly do.", "Aristotle")
         ),
 
         "Facebook Video" to listOf(
-            Pair("একটা ভিডিও শেষ হলে আরেকটা শুরু হয় — এই চক্র ভাঙো।", "RasFocus+"),
-            Pair("Deep work করতে হলে shallow distraction ছাড়তে হবে।", "ক্যাল নিউপোর্ট"),
-            Pair("তোমার মস্তিষ্ক বিশ্রাম চাইছে, video নয়।", "Andrew Huberman"),
-            Pair("সময় একবার চলে গেলে আর ফেরে না।", "ইমাম আল-গাজ্জালী"),
-            Pair("যে নিজের সময়কে নষ্ট করে, সে নিজেকেই নষ্ট করে।", "RasFocus+")
+            Pair("One video ends, another begins — break this cycle.", "RasFocus+"),
+            Pair("To do deep work, you must give up shallow distractions.", "Cal Newport"),
+            Pair("Your brain craves rest, not more videos.", "Andrew Huberman"),
+            Pair("Time once gone never returns.", "Imam Al-Ghazali"),
+            Pair("He who wastes his time wastes himself.", "RasFocus+")
         ),
 
         "Instagram Stories" to listOf(
-            Pair("অন্যের story দেখার চেয়ে নিজের story লেখো।", "RasFocus+"),
-            Pair("মনোযোগই তোমার সবচেয়ে দামি সম্পদ।", "Robin Sharma"),
-            Pair("24 ঘণ্টায় story মিলিয়ে যায়, কিন্তু তোমার হারানো সময় ফেরে না।", "RasFocus+"),
-            Pair("যা দেখছ তা তোমার চিন্তাকে প্রভাবিত করে।", "Marcus Aurelius"),
-            Pair("Focus করো তোমার লক্ষ্যে, story তে নয়।", "RasFocus+")
+            Pair("Write your own story instead of watching others'.", "RasFocus+"),
+            Pair("Focus is your most precious asset.", "Robin Sharma"),
+            Pair("Stories vanish in 24 hours, but your lost time never returns.", "RasFocus+"),
+            Pair("What you watch influences what you think.", "Marcus Aurelius"),
+            Pair("Focus on your goals, not on stories.", "RasFocus+")
         ),
 
         "WhatsApp Channels" to listOf(
-            Pair("প্রয়োজনীয় যোগাযোগ করো, না হলে ফোন রাখো।", "RasFocus+"),
-            Pair("তথ্যের অতিরিক্ত ভার মস্তিষ্ককে দুর্বল করে।", "ক্যাল নিউপোর্ট"),
-            Pair("Channels scroll করা productive নয়, এটি distraction।", "RasFocus+"),
-            Pair("কম পড়ো, বেশি চিন্তা করো।", "হেনরি ডেভিড থরো"),
-            Pair("যা জানা দরকার তা শেখো, বাকি সব noise।", "RasFocus+")
+            Pair("Communicate only what is necessary, otherwise put the phone down.", "RasFocus+"),
+            Pair("Information overload weakens the brain.", "Cal Newport"),
+            Pair("Scrolling channels is not productive, it is distraction.", "RasFocus+"),
+            Pair("Read less, think more.", "Henry David Thoreau"),
+            Pair("Learn what you need to know; everything else is noise.", "RasFocus+")
         ),
 
         "WhatsApp Status" to listOf(
-            Pair("অন্যের status দেখা সময়ের অপচয়।", "RasFocus+"),
-            Pair("নিজের কাজে মনোযোগ দাও, অন্যের জীবনে নয়।", "Marcus Aurelius"),
-            Pair("Status দেখার সময়টুকু নিজের জন্য ব্যবহার করো।", "RasFocus+"),
-            Pair("যে অন্যের দিকে তাকিয়ে থাকে, সে নিজের পথ হারায়।", "লাও জু"),
-            Pair("ছোট ছোট অভ্যাসই বড় পরিবর্তন আনে।", "জেমস ক্লিয়ার")
+            Pair("Watching others' status is a waste of time.", "RasFocus+"),
+            Pair("Focus on your own work, not on others' lives.", "Marcus Aurelius"),
+            Pair("Use the time you spend watching status for yourself.", "RasFocus+"),
+            Pair("He who keeps looking at others loses his own path.", "Lao Tzu"),
+            Pair("Small habits make big changes.", "James Clear")
         ),
 
         "WA Business Status" to listOf(
-            Pair("নিজের কাজে মনোযোগ দাও, অন্যের জীবনে নয়।", "Marcus Aurelius"),
-            Pair("Status দেখার সময়টুকু নিজের জন্য ব্যবহার করো।", "RasFocus+"),
-            Pair("সময় একবার চলে গেলে আর ফেরে না।", "ইমাম আল-গাজ্জালী"),
-            Pair("ছোট ছোট অভ্যাসই বড় পরিবর্তন আনে।", "জেমস ক্লিয়ার")
+            Pair("Focus on your own work, not on others' lives.", "Marcus Aurelius"),
+            Pair("Use the time you spend watching status for yourself.", "RasFocus+"),
+            Pair("Time once gone never returns.", "Imam Al-Ghazali"),
+            Pair("Small habits make big changes.", "James Clear")
         ),
 
         "WA Business Channels" to listOf(
-            Pair("তথ্যের অতিরিক্ত ভার মস্তিষ্ককে দুর্বল করে।", "ক্যাল নিউপোর্ট"),
-            Pair("কম পড়ো, বেশি চিন্তা করো।", "হেনরি ডেভিড থরো"),
-            Pair("Channels scroll করা productive নয়, এটি distraction।", "RasFocus+"),
-            Pair("শৃঙ্খলাই স্বাধীনতার সেতু।", "জিম রোহন")
+            Pair("Information overload weakens the brain.", "Cal Newport"),
+            Pair("Read less, think more.", "Henry David Thoreau"),
+            Pair("Scrolling channels is not productive, it is distraction.", "RasFocus+"),
+            Pair("Discipline is the bridge between goals and accomplishment.", "Jim Rohn")
         ),
 
         "Snapchat Spotlight" to listOf(
-            Pair("Spotlight তোমার মনোযোগ কেড়ে নিচ্ছে।", "RasFocus+"),
-            Pair("একটানা short video দেখা মস্তিষ্কের মনোযোগ ধ্বংস করে।", "Andrew Huberman"),
-            Pair("বড় স্বপ্ন দেখতে হলে ছোট distraction ছাড়তে হবে।", "জিম রোহন"),
-            Pair("তোমার সময় সীমিত, তা অন্যের বিনোদনে নষ্ট করো না।", "স্টিভ জবস"),
-            Pair("মনোযোগ হলো নতুন যুগের মুদ্রা — তা সাবধানে ব্যয় করো।", "ক্যাল নিউপোর্ট")
+            Pair("Spotlight is stealing your attention.", "RasFocus+"),
+            Pair("Continuous short-video watching destroys your brain's ability to focus.", "Andrew Huberman"),
+            Pair("To dream big, you must give up small distractions.", "Jim Rohn"),
+            Pair("Your time is limited, do not waste it on others' entertainment.", "Steve Jobs"),
+            Pair("Attention is the rarest and purest form of generosity — spend it wisely.", "Cal Newport")
         ),
 
         "Snapchat Stories" to listOf(
-            Pair("অন্যের story দেখার চেয়ে নিজের story লেখো।", "RasFocus+"),
-            Pair("24 ঘণ্টায় story মিলিয়ে যায়, কিন্তু তোমার হারানো সময় ফেরে না।", "RasFocus+"),
-            Pair("নিজের কাজে মনোযোগ দাও, অন্যের জীবনে নয়।", "Marcus Aurelius"),
-            Pair("Focus করো তোমার লক্ষ্যে, story তে নয়।", "RasFocus+"),
-            Pair("যে অন্যের দিকে তাকিয়ে থাকে, সে নিজের পথ হারায়।", "লাও জু")
+            Pair("Write your own story instead of watching others'.", "RasFocus+"),
+            Pair("Stories vanish in 24 hours, but your lost time never returns.", "RasFocus+"),
+            Pair("Focus on your own work, not on others' lives.", "Marcus Aurelius"),
+            Pair("Focus on your goals, not on stories.", "RasFocus+"),
+            Pair("He who keeps looking at others loses his own path.", "Lao Tzu")
         ),
 
         "TikTok" to listOf(
-            Pair("TikTok তোমার ঘণ্টার পর ঘণ্টা গ্রাস করছে — এখনই থামো।", "RasFocus+"),
-            Pair("Dopamine trap থেকে বেরিয়ে আসো।", "Andrew Huberman"),
-            Pair("তুমি কী consume করছ, সেটাই তোমাকে define করে।", "ক্যাল নিউপোর্ট"),
-            Pair("Screen time কমাও, dream time বাড়াও।", "RasFocus+"),
-            Pair("একটানা short video মস্তিষ্কের মনোযোগ শক্তি কমিয়ে দেয়।", "Andrew Huberman"),
-            Pair("বড় স্বপ্ন দেখতে হলে ছোট distraction ছাড়তে হবে।", "জিম রোহন")
+            Pair("TikTok is consuming your hours — stop now.", "RasFocus+"),
+            Pair("Break free from the dopamine trap.", "Andrew Huberman"),
+            Pair("What you consume defines who you become.", "Cal Newport"),
+            Pair("Reduce screen time, increase dream time.", "RasFocus+"),
+            Pair("Continuous short videos reduce your brain's ability to focus.", "Andrew Huberman"),
+            Pair("To dream big, you must give up small distractions.", "Jim Rohn")
         ),
 
         "TikTok Live" to listOf(
-            Pair("Live দেখে সময় নষ্ট করা মানে নিজের সুযোগ নষ্ট করা।", "RasFocus+"),
-            Pair("তোমার মনোযোগই তোমার সবচেয়ে মূল্যবান সম্পদ।", "Robin Sharma"),
-            Pair("অন্যের live দেখার বদলে নিজের জীবন নিয়ে কাজ করো।", "RasFocus+"),
-            Pair("শৃঙ্খলাই স্বাধীনতার সেতু।", "জিম রোহন")
+            Pair("Wasting time watching Lives means wasting your own opportunities.", "RasFocus+"),
+            Pair("Your attention is your most valuable asset.", "Robin Sharma"),
+            Pair("Instead of watching others' lives, work on your own.", "RasFocus+"),
+            Pair("Discipline is the bridge between goals and accomplishment.", "Jim Rohn")
         ),
 
         "Adult Content" to listOf(
-            Pair("নিজেকে সম্মান করো — তোমার মস্তিষ্ক এর চেয়ে ভালো কিছুর যোগ্য।", "RasFocus+"),
-            Pair("যা তুমি দেখো, তা তোমার চরিত্রকে গড়ে বা ভাঙে।", "Marcus Aurelius"),
-            Pair("মনকে পবিত্র রাখো, তাহলে জীবন সুন্দর হবে।", "ইমাম আল-গাজ্জালী"),
-            Pair("ইচ্ছাশক্তি একটি পেশি — ব্যবহার করলে শক্তিশালী হয়।", "RasFocus+"),
-            Pair("নিজের উপর নিয়ন্ত্রণই সবচেয়ে বড় শক্তি।", "লাও জু"),
-            Pair("তুমি তোমার অভ্যাসের ফল।", "অ্যারিস্টটল")
+            Pair("Respect yourself — your brain deserves better than this.", "RasFocus+"),
+            Pair("What you watch shapes or breaks your character.", "Marcus Aurelius"),
+            Pair("Keep your mind pure and your life will be beautiful.", "Imam Al-Ghazali"),
+            Pair("Willpower is a muscle — the more you use it, the stronger it gets.", "RasFocus+"),
+            Pair("Mastering yourself is the greatest power.", "Lao Tzu"),
+            Pair("You are the result of your habits.", "Aristotle")
         ),
 
         "Google Search" to listOf(
-            Pair("Mindless browsing থেকে বেরিয়ে আসো।", "RasFocus+"),
-            Pair("কম পড়ো, বেশি চিন্তা করো।", "হেনরি ডেভিড থরো"),
-            Pair("তথ্যের অতিরিক্ত ভার মস্তিষ্ককে দুর্বল করে।", "ক্যাল নিউপোর্ট"),
-            Pair("যা জানা দরকার তা শেখো, বাকি সব noise।", "RasFocus+")
+            Pair("Break free from mindless browsing.", "RasFocus+"),
+            Pair("Read less, think more.", "Henry David Thoreau"),
+            Pair("Information overload weakens the brain.", "Cal Newport"),
+            Pair("Learn what you need to know; everything else is noise.", "RasFocus+")
         ),
 
         "Instagram Search" to listOf(
-            Pair("Search করতে গেলে ঘণ্টার পর ঘণ্টা কোথায় হারিয়ে যাও জানো?", "RasFocus+"),
-            Pair("Explore করার আগে নিজেকে জিজ্ঞেস করো — এটা কি সত্যিই দরকার?", "RasFocus+"),
-            Pair("মনোযোগ হলো নতুন যুগের মুদ্রা — তা সাবধানে ব্যয় করো।", "ক্যাল নিউপোর্ট"),
-            Pair("নিজের কাজে মনোযোগ দাও, অন্যের জীবনে নয়।", "Marcus Aurelius")
+            Pair("When you open search, do you know where hours disappear?", "RasFocus+"),
+            Pair("Before exploring, ask yourself — do you really need this?", "RasFocus+"),
+            Pair("Attention is the rarest and purest form of generosity — spend it wisely.", "Cal Newport"),
+            Pair("Focus on your own work, not on others' lives.", "Marcus Aurelius")
         ),
 
         "Unsupported Browser" to listOf(
-            Pair("নিয়ম মানো, নিজেকে রক্ষা করো।", "RasFocus+"),
-            Pair("শৃঙ্খলাই স্বাধীনতার সেতু।", "জিম রোহন"),
-            Pair("নিজের উপর নিয়ন্ত্রণই সবচেয়ে বড় শক্তি।", "এপিকটেটাস"),
-            Pair("ছোট ছোট অভ্যাসই বড় পরিবর্তন আনে।", "জেমস ক্লিয়ার")
+            Pair("Follow the rules, protect yourself.", "RasFocus+"),
+            Pair("Discipline is the bridge between goals and accomplishment.", "Jim Rohn"),
+            Pair("Mastering yourself is the greatest power.", "Epictetus"),
+            Pair("Small habits make big changes.", "James Clear")
         ),
 
         "App Install" to listOf(
-            Pair("নতুন app মানে নতুন distraction।", "RasFocus+"),
-            Pair("কম tools, বেশি focus।", "ক্যাল নিউপোর্ট"),
-            Pair("প্রয়োজন না হলে install করো না।", "RasFocus+"),
-            Pair("সরলতাই শ্রেষ্ঠত্বের চূড়ান্ত রূপ।", "লিওনার্দো দা ভিঞ্চি")
+            Pair("A new app means a new distraction.", "RasFocus+"),
+            Pair("Fewer tools, more focus.", "Cal Newport"),
+            Pair("Do not install what you do not need.", "RasFocus+"),
+            Pair("Simplicity is the ultimate sophistication.", "Leonardo da Vinci")
         ),
 
         "Uninstall Blocked" to listOf(
-            Pair("তুমি এই সিদ্ধান্তটা ভবিষ্যতের নিজের জন্য নিয়েছিলে — এখন সম্মান করো।", "RasFocus+"),
-            Pair("সংকল্পে অটল থাকো।", "Marcus Aurelius"),
-            Pair("কঠিন সময়ে অভ্যাস ভাঙা সহজ — কিন্তু সেটাই তোমাকে পিছিয়ে দেবে।", "জেমস ক্লিয়ার"),
-            Pair("নিজের উপর নিয়ন্ত্রণই সবচেয়ে বড় শক্তি।", "এপিকটেটাস")
+            Pair("You made this decision for your future self — now honor it.", "RasFocus+"),
+            Pair("Hold firm to your resolution.", "Marcus Aurelius"),
+            Pair("It is easy to break habits in hard times — but that is what sets you back.", "James Clear"),
+            Pair("Mastering yourself is the greatest power.", "Epictetus")
         ),
 
         "Power/Reboot Blocked" to listOf(
-            Pair("তোমার সংকল্প পরীক্ষা হচ্ছে — এখানেই জয় হয়।", "RasFocus+"),
-            Pair("শৃঙ্খলাই স্বাধীনতার সেতু।", "জিম রোহন"),
-            Pair("কঠিন সময়ে টিকে থাকাই আসল শক্তি।", "Marcus Aurelius"),
-            Pair("নিজের উপর নিয়ন্ত্রণই সবচেয়ে বড় শক্তি।", "এপিকটেটাস")
+            Pair("Your resolve is being tested — this is where you win.", "RasFocus+"),
+            Pair("Discipline is the bridge between goals and accomplishment.", "Jim Rohn"),
+            Pair("Persisting through difficulty is true strength.", "Marcus Aurelius"),
+            Pair("Mastering yourself is the greatest power.", "Epictetus")
         )
     )
 
@@ -2084,23 +2084,23 @@ class RasFocusSettingsActivity : ComponentActivity() {
 
 // ── Theme ─────────────────────────────────────────────────
 
-private val BG_DEEP       = Color(0xFF0A0C10)
-private val BG_CARD       = Color(0xFF111318)
-private val BG_CARD2      = Color(0xFF161A22)
-private val ACCENT        = Color(0xFF00F5C4)   // neon mint
+private val BG_DEEP       = Color(0xFFF4FBFD)   // very light teal-white background
+private val BG_CARD       = Color(0xFFFFFFFF)   // pure white cards
+private val BG_CARD2      = Color(0xFFEBF7FA)   // teal-tinted secondary card
+private val ACCENT        = Color(0xFF0096B4)   // teal (RasFocus brand)
 private val ACCENT2       = Color(0xFF7B5CFA)   // electric violet
-private val ACCENT_RED    = Color(0xFFFF3B5C)   // danger red
-private val ACCENT_AMBER  = Color(0xFFFFB800)   // warning amber
-private val TEXT_PRIMARY  = Color(0xFFEAEDF3)
-private val TEXT_SEC      = Color(0xFF6B7280)
-private val DIVIDER       = Color(0xFF1E222C)
+private val ACCENT_RED    = Color(0xFFE53935)   // danger red
+private val ACCENT_AMBER  = Color(0xFFF57C00)   // warning amber
+private val TEXT_PRIMARY  = Color(0xFF0A1628)   // near-black
+private val TEXT_SEC      = Color(0xFF6B7F8E)   // muted grey
+private val DIVIDER       = Color(0xFFCDE8F0)   // teal-tinted divider
 private val SWITCH_ON     = ACCENT
-private val SWITCH_OFF    = Color(0xFF2A2F3D)
+private val SWITCH_OFF    = Color(0xFFD6E8EE)
 
 @Composable
 fun RasFocusSettingsTheme(content: @Composable () -> Unit) {
     MaterialTheme(
-        colorScheme = darkColorScheme(
+        colorScheme = lightColorScheme(
             background = BG_DEEP,
             surface = BG_CARD,
             primary = ACCENT,
@@ -2163,16 +2163,16 @@ fun SettingsScreen() {
             .fillMaxSize()
             .background(BG_DEEP)
     ) {
-        // Subtle grid background
+        // Subtle teal grid on background
         Canvas(modifier = Modifier.fillMaxSize()) {
             val spacing = 40.dp.toPx()
             val cols = (size.width / spacing).toInt() + 1
             val rows = (size.height / spacing).toInt() + 1
             for (col in 0..cols) {
-                drawLine(Color(0xFF131720), Offset(col * spacing, 0f), Offset(col * spacing, size.height), strokeWidth = 0.5f)
+                drawLine(Color(0xFFD0EBF4), Offset(col * spacing, 0f), Offset(col * spacing, size.height), strokeWidth = 0.6f)
             }
             for (row in 0..rows) {
-                drawLine(Color(0xFF131720), Offset(0f, row * spacing), Offset(size.width, row * spacing), strokeWidth = 0.5f)
+                drawLine(Color(0xFFD0EBF4), Offset(0f, row * spacing), Offset(size.width, row * spacing), strokeWidth = 0.6f)
             }
         }
 
@@ -2238,13 +2238,13 @@ fun SettingsScreen() {
                         modifier = Modifier
                             .background(
                                 if (blockAdultSiteList) ACCENT_RED.copy(alpha = 0.18f)
-                                else Color(0xFF1E222C),
+                                else Color(0xFFE8EDF3),
                                 RoundedCornerShape(8.dp)
                             )
                             .border(
                                 1.dp,
                                 if (blockAdultSiteList) ACCENT_RED.copy(alpha = 0.6f)
-                                else Color(0xFF2A2F3D),
+                                else Color(0xFFDDE3EB),
                                 RoundedCornerShape(8.dp)
                             )
                             .clickable {
@@ -2588,49 +2588,60 @@ fun SettingsScreen() {
 
 @Composable
 fun HeaderBar() {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        // Logo mark
-        Box(
-            modifier = Modifier
-                .size(40.dp)
-                .background(
-                    brush = Brush.linearGradientBrush(
-                        listOf(ACCENT, ACCENT2),
-                        start = Offset(0f, 0f),
-                        end = Offset(40f, 40f)
-                    ),
-                    shape = RoundedCornerShape(10.dp)
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(
+                brush = androidx.compose.ui.graphics.Brush.horizontalGradient(
+                    listOf(ACCENT.copy(alpha = 0.08f), Color.Transparent)
                 ),
-            contentAlignment = Alignment.Center
-        ) {
-            Text("RF", color = Color.Black, fontSize = 14.sp, fontWeight = FontWeight.Black)
-        }
-        Spacer(Modifier.width(12.dp))
-        Column {
-            Text(
-                "RasFocus",
-                color = TEXT_PRIMARY,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                letterSpacing = (-0.5).sp
+                shape = RoundedCornerShape(16.dp)
             )
-            Text(
-                "Content Blocker",
-                color = TEXT_SEC,
-                fontSize = 12.sp,
-                letterSpacing = 1.sp
-            )
-        }
-        Spacer(Modifier.weight(1f))
-        Box(
-            modifier = Modifier
-                .background(Color(0xFF1A2332), RoundedCornerShape(8.dp))
-                .padding(horizontal = 10.dp, vertical = 5.dp)
-        ) {
-            Text("● ACTIVE", color = ACCENT, fontSize = 10.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
+            .border(1.dp, ACCENT.copy(alpha = 0.15f), RoundedCornerShape(16.dp))
+            .padding(horizontal = 16.dp, vertical = 12.dp)
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            // Logo mark
+            Box(
+                modifier = Modifier
+                    .size(44.dp)
+                    .background(
+                        brush = androidx.compose.ui.graphics.Brush.linearGradientBrush(
+                            listOf(ACCENT, ACCENT2),
+                            start = Offset(0f, 0f),
+                            end = Offset(44f, 44f)
+                        ),
+                        shape = RoundedCornerShape(12.dp)
+                    ),
+                contentAlignment = Alignment.Center
+            ) {
+                Text("RF", color = Color.White, fontSize = 15.sp, fontWeight = FontWeight.Black)
+            }
+            Spacer(Modifier.width(12.dp))
+            Column {
+                Text(
+                    "RasFocus",
+                    color = ACCENT,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = (-0.5).sp
+                )
+                Text(
+                    "Content Blocker",
+                    color = TEXT_SEC,
+                    fontSize = 12.sp,
+                    letterSpacing = 1.sp
+                )
+            }
+            Spacer(Modifier.weight(1f))
+            Box(
+                modifier = Modifier
+                    .background(ACCENT.copy(alpha = 0.12f), RoundedCornerShape(8.dp))
+                    .border(1.dp, ACCENT.copy(alpha = 0.3f), RoundedCornerShape(8.dp))
+                    .padding(horizontal = 10.dp, vertical = 5.dp)
+            ) {
+                Text("● ACTIVE", color = ACCENT, fontSize = 10.sp, fontWeight = FontWeight.Bold, letterSpacing = 1.sp)
+            }
         }
     }
 }
@@ -2638,22 +2649,32 @@ fun HeaderBar() {
 @Composable
 fun SectionHeader(icon: String, title: String, accentColor: Color) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Text(icon, color = accentColor, fontSize = 14.sp)
-        Spacer(Modifier.width(8.dp))
-        Text(
-            title.uppercase(),
-            color = accentColor,
-            fontSize = 10.sp,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.5.sp
-        )
-        Spacer(Modifier.width(8.dp))
+        Box(
+            modifier = Modifier
+                .background(accentColor.copy(alpha = 0.1f), RoundedCornerShape(8.dp))
+                .padding(horizontal = 10.dp, vertical = 5.dp)
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(icon, color = accentColor, fontSize = 13.sp)
+                Spacer(Modifier.width(6.dp))
+                Text(
+                    title.uppercase(),
+                    color = accentColor,
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    letterSpacing = 1.2.sp
+                )
+            }
+        }
+        Spacer(Modifier.width(10.dp))
         Box(
             modifier = Modifier
                 .weight(1f)
-                .height(1.dp)
+                .height(1.5.dp)
                 .background(
-                    Brush.horizontalGradient(listOf(accentColor.copy(alpha = 0.3f), Color.Transparent))
+                    androidx.compose.ui.graphics.Brush.horizontalGradient(
+                        listOf(accentColor.copy(alpha = 0.3f), Color.Transparent)
+                    )
                 )
         )
     }
@@ -2664,10 +2685,24 @@ fun BlockingCard(content: @Composable ColumnScope.() -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(BG_CARD, RoundedCornerShape(14.dp))
-            .border(1.dp, DIVIDER, RoundedCornerShape(14.dp)),
-        content = content
-    )
+            .background(BG_CARD, RoundedCornerShape(16.dp))
+            .border(1.5.dp, ACCENT.copy(alpha = 0.28f), RoundedCornerShape(16.dp))
+            .shadow(2.dp, RoundedCornerShape(16.dp), spotColor = ACCENT.copy(alpha = 0.08f))
+    ) {
+        // Teal top strip
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(3.dp)
+                .background(
+                    brush = androidx.compose.ui.graphics.Brush.horizontalGradient(
+                        listOf(ACCENT, ACCENT.copy(alpha = 0.3f), Color.Transparent)
+                    ),
+                    shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
+                )
+        )
+        content()
+    }
 }
 
 @Composable
@@ -2683,17 +2718,37 @@ fun MasterToggleCard(
         modifier = Modifier
             .fillMaxWidth()
             .background(
-                if (checked) Color(0xFF1A0A0E) else BG_CARD,
-                RoundedCornerShape(14.dp)
+                brush = if (checked)
+                    androidx.compose.ui.graphics.Brush.horizontalGradient(
+                        listOf(ACCENT_RED.copy(alpha = 0.08f), Color(0xFFFFF5F5))
+                    )
+                else
+                    androidx.compose.ui.graphics.Brush.horizontalGradient(
+                        listOf(ACCENT.copy(alpha = 0.07f), Color(0xFFF0FAFC))
+                    ),
+                shape = RoundedCornerShape(16.dp)
             )
             .border(
-                1.dp,
-                if (checked) ACCENT_RED.copy(alpha = 0.5f) else DIVIDER,
-                RoundedCornerShape(14.dp)
+                1.5.dp,
+                if (checked) ACCENT_RED.copy(alpha = 0.45f) else ACCENT.copy(alpha = 0.3f),
+                RoundedCornerShape(16.dp)
             )
             .padding(horizontal = 16.dp, vertical = 14.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
+            // Teal/red icon circle
+            Box(
+                modifier = Modifier
+                    .size(40.dp)
+                    .background(
+                        if (checked) ACCENT_RED.copy(alpha = 0.12f) else ACCENT.copy(alpha = 0.12f),
+                        RoundedCornerShape(12.dp)
+                    ),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(if (checked) "🛡" else "🔓", fontSize = 18.sp)
+            }
+            Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
                 Text(label, color = TEXT_PRIMARY, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
                 Spacer(Modifier.height(2.dp))
@@ -2713,14 +2768,32 @@ fun RasSwitch(
     accentColor: Color,
     onCheckedChange: (Boolean) -> Unit
 ) {
+    val bgColor by animateColorAsState(
+        if (checked) accentColor.copy(alpha = 0.08f) else BG_CARD, tween(200)
+    )
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .background(bgColor)
             .padding(horizontal = 16.dp, vertical = 13.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
+        // Teal left dot indicator
+        Box(
+            modifier = Modifier
+                .size(8.dp)
+                .background(
+                    if (checked) accentColor else DIVIDER,
+                    CircleShape
+                )
+                .then(
+                    if (checked) Modifier.shadow(4.dp, CircleShape, spotColor = accentColor)
+                    else Modifier
+                )
+        )
+        Spacer(Modifier.width(10.dp))
         Column(Modifier.weight(1f)) {
-            Text(label, color = TEXT_PRIMARY, fontSize = 13.sp, fontWeight = FontWeight.Medium)
+            Text(label, color = if (checked) accentColor else TEXT_PRIMARY, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
             Spacer(Modifier.height(2.dp))
             Text(sublabel, color = TEXT_SEC, fontSize = 11.sp)
         }
@@ -2738,23 +2811,28 @@ fun SubSwitchRow(
     accentColor: Color,
     onCheckedChange: (Boolean) -> Unit
 ) {
+    val bgColor by animateColorAsState(
+        if (checked) accentColor.copy(alpha = 0.05f) else Color.White, tween(200)
+    )
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .background(bgColor)
             .padding(start = 16.dp, end = 16.dp, top = 11.dp, bottom = 11.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Box(
             modifier = Modifier
-                .size(30.dp)
-                .background(accentColor.copy(alpha = 0.12f), RoundedCornerShape(8.dp)),
+                .size(32.dp)
+                .background(accentColor.copy(alpha = 0.12f), RoundedCornerShape(10.dp))
+                .border(1.dp, accentColor.copy(alpha = 0.25f), RoundedCornerShape(10.dp)),
             contentAlignment = Alignment.Center
         ) {
-            Text(icon, fontSize = 13.sp, color = accentColor)
+            Text(icon, fontSize = 14.sp, color = accentColor)
         }
         Spacer(Modifier.width(12.dp))
         Column(Modifier.weight(1f)) {
-            Text(label, color = TEXT_PRIMARY, fontSize = 13.sp, fontWeight = FontWeight.Medium)
+            Text(label, color = TEXT_PRIMARY, fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
             Spacer(Modifier.height(2.dp))
             Text(sublabel, color = TEXT_SEC, fontSize = 11.sp)
         }
@@ -2775,7 +2853,7 @@ fun CustomizeRow(
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 12.dp)
     ) {
-        Text(label, color = TEXT_SEC, fontSize = 11.sp, letterSpacing = 0.3.sp)
+        Text(label, color = ACCENT, fontSize = 11.sp, fontWeight = FontWeight.SemiBold, letterSpacing = 0.5.sp)
         Spacer(Modifier.height(6.dp))
         BasicTextField(
             value = value,
@@ -2788,9 +2866,9 @@ fun CustomizeRow(
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(BG_DEEP, RoundedCornerShape(8.dp))
-                        .border(1.dp, DIVIDER, RoundedCornerShape(8.dp))
-                        .padding(horizontal = 12.dp, vertical = 9.dp)
+                        .background(BG_DEEP, RoundedCornerShape(10.dp))
+                        .border(1.5.dp, ACCENT.copy(alpha = 0.3f), RoundedCornerShape(10.dp))
+                        .padding(horizontal = 12.dp, vertical = 10.dp)
                 ) {
                     if (value.isEmpty()) Text(placeholder, color = TEXT_SEC, fontSize = 13.sp)
                     inner()
@@ -2802,8 +2880,8 @@ fun CustomizeRow(
 
 @Composable
 fun RasToggle(checked: Boolean, accentColor: Color, onCheckedChange: (Boolean) -> Unit) {
-    val trackColor by animateColorAsState(if (checked) accentColor.copy(alpha = 0.25f) else SWITCH_OFF, tween(250))
-    val thumbColor by animateColorAsState(if (checked) accentColor else Color(0xFF4B5563), tween(250))
+    val trackColor by animateColorAsState(if (checked) accentColor else Color(0xFFE2EAF0), tween(250))
+    val thumbColor by animateColorAsState(if (checked) Color.White else Color(0xFFB0BEC5), tween(250))
     val offset by animateDpAsState(if (checked) 20.dp else 2.dp, tween(250))
 
     Box(
@@ -2811,7 +2889,7 @@ fun RasToggle(checked: Boolean, accentColor: Color, onCheckedChange: (Boolean) -
             .width(44.dp)
             .height(26.dp)
             .background(trackColor, RoundedCornerShape(13.dp))
-            .border(1.dp, if (checked) accentColor.copy(alpha = 0.5f) else Color(0xFF374151), RoundedCornerShape(13.dp))
+            .border(1.dp, if (checked) accentColor else Color(0xFFCDD5DE), RoundedCornerShape(13.dp))
             .clickable { onCheckedChange(!checked) }
     ) {
         Box(
@@ -2819,8 +2897,8 @@ fun RasToggle(checked: Boolean, accentColor: Color, onCheckedChange: (Boolean) -
                 .padding(start = offset)
                 .align(Alignment.CenterStart)
                 .size(22.dp)
+                .shadow(if (checked) 3.dp else 1.dp, CircleShape, spotColor = accentColor)
                 .background(thumbColor, CircleShape)
-                .then(if (checked) Modifier.shadow(4.dp, CircleShape, spotColor = accentColor) else Modifier)
         )
     }
 }
@@ -2846,88 +2924,105 @@ fun AppReelsCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(BG_CARD, RoundedCornerShape(14.dp))
-            .border(1.dp, DIVIDER, RoundedCornerShape(14.dp))
+            .background(BG_CARD, RoundedCornerShape(16.dp))
+            .border(1.5.dp, ACCENT.copy(alpha = 0.22f), RoundedCornerShape(16.dp))
+            .shadow(2.dp, RoundedCornerShape(16.dp), spotColor = ACCENT.copy(alpha = 0.06f))
     ) {
-        // App header row
-        Row(
+        // App header row — teal gradient strip
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 12.dp),
-            verticalAlignment = Alignment.CenterVertically
+                .background(
+                    brush = androidx.compose.ui.graphics.Brush.horizontalGradient(
+                        listOf(ACCENT.copy(alpha = 0.15f), BG_CARD2, BG_CARD)
+                    ),
+                    shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp)
+                )
+                .padding(horizontal = 14.dp, vertical = 11.dp)
         ) {
-            Box(
-                modifier = Modifier
-                    .size(36.dp)
-                    .background(appIconColor.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
-                    .border(1.dp, appIconColor.copy(alpha = 0.3f), RoundedCornerShape(10.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(appIcon, fontSize = 16.sp)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Box(
+                    modifier = Modifier
+                        .size(36.dp)
+                        .background(appIconColor.copy(alpha = 0.15f), RoundedCornerShape(10.dp))
+                        .border(1.dp, appIconColor.copy(alpha = 0.35f), RoundedCornerShape(10.dp)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(appIcon, fontSize = 16.sp)
+                }
+                Spacer(Modifier.width(10.dp))
+                Text(appName, color = TEXT_PRIMARY, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.weight(1f))
+                Box(
+                    modifier = Modifier
+                        .background(ACCENT.copy(alpha = 0.12f), RoundedCornerShape(6.dp))
+                        .border(1.dp, ACCENT.copy(alpha = 0.25f), RoundedCornerShape(6.dp))
+                        .padding(horizontal = 7.dp, vertical = 3.dp)
+                ) {
+                    Text("${rows.size} rules", color = ACCENT, fontSize = 9.sp, fontWeight = FontWeight.Bold)
+                }
             }
-            Spacer(Modifier.width(12.dp))
-            Text(appName, color = TEXT_PRIMARY, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
         }
 
-        // Dashed left border + rows
+        // Teal divider
+        Box(modifier = Modifier.fillMaxWidth().height(1.5.dp).background(
+            brush = androidx.compose.ui.graphics.Brush.horizontalGradient(
+                listOf(ACCENT.copy(alpha = 0.4f), ACCENT.copy(alpha = 0.1f), Color.Transparent)
+            )
+        ))
+
+        // Rows
         rows.forEachIndexed { index, row ->
-            Box(
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = 28.dp)
-            ) {
-                // Dashed vertical line
-                Canvas(
-                    modifier = Modifier
-                        .width(2.dp)
-                        .height(if (index == rows.lastIndex) 24.dp else 48.dp)
-                        .align(Alignment.TopStart)
-                ) {
-                    val dashLen = 6.dp.toPx()
-                    val gap = 4.dp.toPx()
-                    var y = 0f
-                    while (y < size.height) {
-                        drawLine(
-                            color = Color(0xFF2A3040),
-                            start = Offset(size.width / 2, y),
-                            end = Offset(size.width / 2, minOf(y + dashLen, size.height)),
-                            strokeWidth = 1.5f
-                        )
-                        y += dashLen + gap
-                    }
-                }
-
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 20.dp, end = 16.dp, top = 10.dp, bottom = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        when (row) {
-                            is AppReelsRow.Toggle -> row.label
-                            is AppReelsRow.Upgrade -> row.label
-                        },
-                        color = TEXT_PRIMARY,
-                        fontSize = 13.sp,
-                        modifier = Modifier.weight(1f)
+                    .background(
+                        if (index % 2 == 0) BG_CARD else BG_DEEP
                     )
-                    when (row) {
-                        is AppReelsRow.Toggle -> {
-                            RasToggle(
-                                checked = row.checked,
-                                accentColor = ACCENT,
-                                onCheckedChange = row.onCheckedChange
+                    .then(
+                        if (index == rows.lastIndex)
+                            Modifier.background(
+                                if (index % 2 == 0) BG_CARD else BG_DEEP,
+                                RoundedCornerShape(bottomStart = 16.dp, bottomEnd = 16.dp)
                             )
-                        }
-                        is AppReelsRow.Upgrade -> {
-                            UpgradeButton()
-                        }
+                        else Modifier
+                    )
+                    .padding(horizontal = 16.dp, vertical = 11.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Teal dot indicator
+                Box(
+                    modifier = Modifier
+                        .size(7.dp)
+                        .background(ACCENT.copy(alpha = 0.45f), CircleShape)
+                )
+                Spacer(Modifier.width(10.dp))
+                Text(
+                    when (row) {
+                        is AppReelsRow.Toggle -> row.label
+                        is AppReelsRow.Upgrade -> row.label
+                    },
+                    color = TEXT_PRIMARY,
+                    fontSize = 13.sp,
+                    modifier = Modifier.weight(1f)
+                )
+                when (row) {
+                    is AppReelsRow.Toggle -> {
+                        RasToggle(
+                            checked = row.checked,
+                            accentColor = ACCENT,
+                            onCheckedChange = row.onCheckedChange
+                        )
+                    }
+                    is AppReelsRow.Upgrade -> {
+                        UpgradeButton()
                     }
                 }
             }
+            if (index < rows.lastIndex) {
+                Box(modifier = Modifier.fillMaxWidth().height(1.dp).padding(horizontal = 14.dp).background(DIVIDER))
+            }
         }
-        Spacer(Modifier.height(4.dp))
     }
 }
 
@@ -2968,9 +3063,13 @@ fun RasDivider() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp)
+            .padding(horizontal = 14.dp)
             .height(1.dp)
-            .background(DIVIDER)
+            .background(
+                brush = androidx.compose.ui.graphics.Brush.horizontalGradient(
+                    listOf(ACCENT.copy(alpha = 0.08f), DIVIDER, ACCENT.copy(alpha = 0.08f))
+                )
+            )
     )
 }
 
@@ -2987,7 +3086,7 @@ fun FocusModeButton() {
             modifier = Modifier
                 .background(
                     Brush.linearGradientBrush(
-                        if (active) listOf(ACCENT, ACCENT2) else listOf(Color(0xFF1E2330), Color(0xFF1E2330)),
+                        if (active) listOf(ACCENT, ACCENT2) else listOf(Color(0xFFECF4F8), Color(0xFFECF4F8)),
                         start = Offset(0f, 0f),
                         end = Offset(200f, 60f)
                     ),
@@ -2995,7 +3094,7 @@ fun FocusModeButton() {
                 )
                 .border(
                     1.dp,
-                    if (active) ACCENT.copy(0.5f) else Color(0xFF2A3040),
+                    if (active) ACCENT.copy(0.5f) else Color(0xFFD0D8E4),
                     RoundedCornerShape(50.dp)
                 )
                 .clickable { active = !active }
@@ -3063,14 +3162,14 @@ fun FocusLockTopBar(
                 .fillMaxWidth()
                 .background(
                     if (isActive)
-                        Brush.horizontalGradient(listOf(Color(0xFF0D2B1F), Color(0xFF0D1A2B)))
+                        Brush.horizontalGradient(listOf(ACCENT.copy(0.18f), ACCENT.copy(0.06f), BG_CARD))
                     else
-                        Brush.horizontalGradient(listOf(Color(0xFF111827), Color(0xFF1A1F2E))),
+                        Brush.horizontalGradient(listOf(BG_CARD, BG_DEEP)),
                     RoundedCornerShape(16.dp)
                 )
                 .border(
                     1.5.dp,
-                    if (isActive) ACCENT.copy(0.6f) else Color(0xFF2A3040),
+                    if (isActive) ACCENT.copy(0.6f) else ACCENT.copy(0.2f),
                     RoundedCornerShape(16.dp)
                 )
                 .padding(horizontal = 14.dp, vertical = 10.dp)
@@ -3084,7 +3183,7 @@ fun FocusLockTopBar(
                     modifier = Modifier
                         .size(36.dp)
                         .background(
-                            if (isActive) ACCENT.copy(0.15f) else Color(0xFF1E2330),
+                            if (isActive) ACCENT.copy(0.15f) else ACCENT.copy(0.1f),
                             RoundedCornerShape(10.dp)
                         ),
                     contentAlignment = Alignment.Center
@@ -3185,7 +3284,7 @@ fun FocusLockSetupDialog(
             modifier = Modifier
                 .fillMaxWidth(0.94f)
                 .background(BG_CARD, RoundedCornerShape(20.dp))
-                .border(1.dp, DIVIDER, RoundedCornerShape(20.dp))
+                .border(1.5.dp, ACCENT.copy(alpha = 0.35f), RoundedCornerShape(20.dp))
                 .padding(20.dp)
         ) {
             Column {
@@ -3195,7 +3294,7 @@ fun FocusLockSetupDialog(
                     Spacer(Modifier.width(8.dp))
                     Text(
                         when(step) { 0 -> "Select Mode"; else -> "Configure" },
-                        color = TEXT_PRIMARY,
+                        color = ACCENT,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
@@ -3224,12 +3323,12 @@ fun FocusLockSetupDialog(
                                 .fillMaxWidth()
                                 .padding(vertical = 5.dp)
                                 .background(
-                                    if (sel) ACCENT.copy(0.1f) else Color(0xFF161A22),
+                                    if (sel) ACCENT.copy(0.1f) else Color(0xFFF5F7FA),
                                     RoundedCornerShape(12.dp)
                                 )
                                 .border(
                                     1.5.dp,
-                                    if (sel) ACCENT else Color(0xFF2A3040),
+                                    if (sel) ACCENT else Color(0xFFD0D8E4),
                                     RoundedCornerShape(12.dp)
                                 )
                                 .clickable { selectedMode = code }
@@ -3347,7 +3446,7 @@ fun FocusLockSetupDialog(
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth()
-                                    .background(Color(0xFF0D1117), RoundedCornerShape(10.dp))
+                                    .background(Color(0xFFF0F8FB), RoundedCornerShape(10.dp))
                                     .border(1.dp, ACCENT.copy(0.3f), RoundedCornerShape(10.dp))
                                     .padding(12.dp)
                             ) {
@@ -3400,7 +3499,7 @@ fun FocusLockUnlockDialog(
             modifier = Modifier
                 .fillMaxWidth(0.94f)
                 .background(BG_CARD, RoundedCornerShape(20.dp))
-                .border(1.5.dp, ACCENT_RED.copy(0.5f), RoundedCornerShape(20.dp))
+                .border(1.5.dp, ACCENT.copy(alpha = 0.4f), RoundedCornerShape(20.dp))
                 .padding(20.dp)
         ) {
             Column {
@@ -3409,7 +3508,7 @@ fun FocusLockUnlockDialog(
                     Spacer(Modifier.width(8.dp))
                     Text(
                         "Unlock Focus Lock",
-                        color = TEXT_PRIMARY, fontSize = 16.sp, fontWeight = FontWeight.Bold
+                        color = ACCENT, fontSize = 16.sp, fontWeight = FontWeight.Bold
                     )
                     Spacer(Modifier.weight(1f))
                     Text("✕", color = TEXT_SEC, fontSize = 14.sp,
@@ -3473,7 +3572,7 @@ fun FocusLockUnlockDialog(
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color(0xFF0D1117), RoundedCornerShape(10.dp))
+                                .background(Color(0xFFF0F8FB), RoundedCornerShape(10.dp))
                                 .border(1.dp, ACCENT.copy(0.3f), RoundedCornerShape(10.dp))
                                 .padding(10.dp)
                                 .heightIn(max = 120.dp)
@@ -3485,10 +3584,10 @@ fun FocusLockUnlockDialog(
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color(0xFF111318), RoundedCornerShape(10.dp))
+                                .background(Color(0xFFFAFBFC), RoundedCornerShape(10.dp))
                                 .border(
                                     1.dp,
-                                    if (inputWordCount >= requiredWordCount) ACCENT else Color(0xFF2A3040),
+                                    if (inputWordCount >= requiredWordCount) ACCENT else Color(0xFFD0D8E4),
                                     RoundedCornerShape(10.dp)
                                 )
                                 .padding(10.dp)
@@ -3554,7 +3653,7 @@ fun FocusDialogButton(
                 if (enabled)
                     Brush.horizontalGradient(listOf(ACCENT, ACCENT2))
                 else
-                    Brush.horizontalGradient(listOf(Color(0xFF2A2F3D), Color(0xFF2A2F3D))),
+                    Brush.horizontalGradient(listOf(Color(0xFFDDE3EB), Color(0xFFDDE3EB))),
                 RoundedCornerShape(12.dp)
             )
             .then(if (enabled) Modifier.clickable { onClick() } else Modifier)
@@ -3580,8 +3679,8 @@ fun FocusPasswordField(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color(0xFF111318), RoundedCornerShape(10.dp))
-            .border(1.dp, Color(0xFF2A3040), RoundedCornerShape(10.dp))
+            .background(Color(0xFFFAFBFC), RoundedCornerShape(10.dp))
+            .border(1.dp, Color(0xFFD0D8E4), RoundedCornerShape(10.dp))
             .padding(horizontal = 14.dp, vertical = 12.dp)
     ) {
         BasicTextField(
@@ -3608,7 +3707,7 @@ fun FocusNumberPicker(
 ) {
     Column(
         modifier = modifier
-            .background(Color(0xFF161A22), RoundedCornerShape(12.dp))
+            .background(Color(0xFFF5F7FA), RoundedCornerShape(12.dp))
             .border(1.dp, DIVIDER, RoundedCornerShape(12.dp))
             .padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -3619,7 +3718,7 @@ fun FocusNumberPicker(
         Box(
             modifier = Modifier
                 .size(32.dp)
-                .background(Color(0xFF1E2330), CircleShape)
+                .background(Color(0xFFECF4F8), CircleShape)
                 .clickable { if (value < max) onValueChange(value + 1) },
             contentAlignment = Alignment.Center
         ) {
@@ -3637,7 +3736,7 @@ fun FocusNumberPicker(
         Box(
             modifier = Modifier
                 .size(32.dp)
-                .background(Color(0xFF1E2330), CircleShape)
+                .background(Color(0xFFECF4F8), CircleShape)
                 .clickable { if (value > min) onValueChange(value - 1) },
             contentAlignment = Alignment.Center
         ) {
